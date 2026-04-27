@@ -7,7 +7,7 @@ on:
       - deploy
       - master
 
-
+  workflow_dispatch: 
 jobs:
   sonar:
     runs-on: self-hosted
