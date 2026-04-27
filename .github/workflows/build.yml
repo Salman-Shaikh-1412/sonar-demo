@@ -21,7 +21,5 @@ jobs:
       - name: Sonar Scan
         run: |
           mvn sonar:sonar \
-            -Dsonar.host.url=http://localhost:9000 \
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=spring-sonar-demo -Dsonar.projectName='spring-sonar-demo'
